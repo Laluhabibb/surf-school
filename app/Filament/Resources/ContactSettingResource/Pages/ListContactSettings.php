@@ -3,17 +3,24 @@
 namespace App\Filament\Resources\ContactSettingResource\Pages;
 
 use App\Filament\Resources\ContactSettingResource;
-use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
 class ListContactSettings extends ListRecords
 {
     protected static string $resource = ContactSettingResource::class;
 
-    protected function getHeaderActions(): array
+    public function mount(): void
     {
-        return [
-            Actions\CreateAction::make(),
-        ];
+        $record = \App\Models\ContactSetting::first();
+
+        if ($record) {
+            $this->redirect(
+                ContactSettingResource::getUrl('edit', ['record' => $record])
+            );
+        } else {
+            $this->redirect(
+                ContactSettingResource::getUrl('create')
+            );
+        }
     }
 }

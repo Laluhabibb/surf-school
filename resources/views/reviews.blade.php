@@ -2,9 +2,9 @@
 
 @section('content')
 
-    <section class="relative md:py-20 bg-gradient-to-b from-sky-50 via-white to-blue-50">
+    <section class="relative md:pb-20 pt-5 bg-gradient-to-b from-sky-50 via-white to-blue-50">
 
-        <div class="max-w-7xl mx-auto px-4">
+        <div class="max-w-6xl mx-auto px-4">
 
             <!-- HEADER -->
             <div class="text-center mb-10 md:mb-16" data-aos="fade-up">

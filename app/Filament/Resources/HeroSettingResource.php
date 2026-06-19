@@ -23,7 +23,7 @@ class HeroSettingResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-photo';
 
-    protected static ?string $navigationLabel = 'Hero Setting';
+    protected static ?string $navigationLabel = 'Hero Settings';
 
     protected static ?string $pluralModelLabel = 'Hero Settings';
 
@@ -34,43 +34,49 @@ class HeroSettingResource extends Resource
     // =========================
     public static function form(Form $form): Form
     {
-        return $form
-            ->schema([
-                TextInput::make('title')
-                    ->required()
-                    ->maxLength(255),
+        return $form->schema([
+            TextInput::make('title')
+                ->required()
+                ->maxLength(255),
 
-                TextInput::make('subtitle')
-                    ->maxLength(255),
+            TextInput::make('subtitle')
+                ->maxLength(255),
 
-                Textarea::make('description')
-                    ->columnSpanFull(),
+            Textarea::make('description')
+                ->columnSpanFull(),
 
-                TextInput::make('button_text')
-                    ->maxLength(255),
+            TextInput::make('button_text')
+                ->maxLength(255),
 
-                TextInput::make('button_link')
-                    ->url()
-                    ->maxLength(255),
+            TextInput::make('button_link')
+                ->url()
+                ->maxLength(255),
 
-                FileUpload::make('image')
-                    ->image()
-                    ->directory('hero')
-                    ->nullable(),
+            // IMAGE UPLOAD
+            FileUpload::make('image')
+                ->label('Hero Image')
+                ->image()
+                ->directory('hero')
+                ->nullable(),
 
-                TextInput::make('video')
-                    ->label('Video URL (YouTube / MP4)')
-                    ->nullable(),
+            // VIDEO UPLOAD (MP4)
+            FileUpload::make('video')
+                ->label('Hero Video')
+                ->directory('hero-videos')
+                ->acceptedFileTypes(['video/mp4', 'video/webm'])
+                ->nullable(),
 
-                Toggle::make('use_video')
-                    ->label('Use Video instead of Image')
-                    ->default(false),
+            // Toggle: pakai video atau image
+            Toggle::make('use_video')
+                ->label('Use Video instead of Image')
+                ->default(false),
 
-                Toggle::make('is_active')
-                    ->label('Set as Active Hero')
-                    ->helperText('Only ONE hero should be active')
-                    ->default(false),
-            ]);
+            // Active hero (ONLY ONE ACTIVE)
+            Toggle::make('is_active')
+                ->label('Set as Active Hero')
+                ->helperText('Only ONE hero should be active')
+                ->default(false),
+        ]);
     }
 
     // =========================
@@ -87,7 +93,8 @@ class HeroSettingResource extends Resource
                 TextColumn::make('subtitle')
                     ->limit(30),
 
-                ImageColumn::make('image'),
+                ImageColumn::make('image')
+                    ->label('Image'),
 
                 IconColumn::make('use_video')
                     ->boolean()
@@ -105,7 +112,7 @@ class HeroSettingResource extends Resource
     }
 
     // =========================
-    // IMPORTANT: SINGLE ACTIVE HERO LOGIC
+    // ONLY ONE ACTIVE HERO
     // =========================
     public static function mutateFormDataBeforeSave(array $data): array
     {

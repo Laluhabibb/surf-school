@@ -3,17 +3,20 @@
 namespace App\Filament\Resources\HeroSettingResource\Pages;
 
 use App\Filament\Resources\HeroSettingResource;
-use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
 class ListHeroSettings extends ListRecords
 {
     protected static string $resource = HeroSettingResource::class;
 
-    protected function getHeaderActions(): array
+    public function mount(): void
     {
-        return [
-            Actions\CreateAction::make(),
-        ];
+        $record = \App\Models\HeroSetting::first();
+
+        if ($record) {
+            $this->redirect(HeroSettingResource::getUrl('edit', ['record' => $record]));
+        } else {
+            $this->redirect(HeroSettingResource::getUrl('create'));
+        }
     }
 }

@@ -3,17 +3,24 @@
 namespace App\Filament\Resources\AboutSettingResource\Pages;
 
 use App\Filament\Resources\AboutSettingResource;
-use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
 class ListAboutSettings extends ListRecords
 {
     protected static string $resource = AboutSettingResource::class;
 
-    protected function getHeaderActions(): array
+    public function mount(): void
     {
-        return [
-            Actions\CreateAction::make(),
-        ];
+        $record = \App\Models\AboutSetting::first();
+
+        if ($record) {
+            $this->redirect(
+                AboutSettingResource::getUrl('edit', ['record' => $record])
+            );
+        } else {
+            $this->redirect(
+                AboutSettingResource::getUrl('create')
+            );
+        }
     }
 }

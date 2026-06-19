@@ -10,6 +10,9 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\BookingsExport;
+use Filament\Tables\Actions\Action;
 
 class BookingResource extends Resource
 {
@@ -79,9 +82,18 @@ class BookingResource extends Resource
                     ->dateTime()
                     ->label('Created'),
             ])
+    ->headerActions([
+    Action::make('export')
+        ->label('Download Excel')
+        ->icon('heroicon-o-arrow-down-tray')
+        ->action(function () {
+            return Excel::download(new BookingsExport, 'bookings.xlsx');
+        }),
+])
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
+                
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
