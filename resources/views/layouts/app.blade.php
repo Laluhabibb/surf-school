@@ -18,6 +18,27 @@
     <meta name="author" content="Supar Surf School">
     <meta name="robots" content="index, follow">
 
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
+    <link rel="shortcut icon" href="{{ asset('images/logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/logo.png') }}">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Supar Surf School Lombok">
+    <meta property="og:title" content="Supar Surf School Lombok">
+    <meta property="og:description"
+        content="Learn surfing with professional local instructors at Tanjung Aan Beach, Lombok. Perfect for beginners, families, and ocean lovers.">
+    <meta property="og:url" content="{{ url('/') }}">
+    <meta property="og:image" content="{{ asset('images/og-image.jpeg') }}">
+
+    <!-- TWITTER / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Supar Surf School Lombok">
+    <meta name="twitter:description"
+        content="Learn surfing with professional local instructors at Tanjung Aan Beach, Lombok.">
+    <meta name="twitter:image" content="{{ asset('images/og-image.jpeg') }}">
+
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -59,21 +80,29 @@
                 <!-- LOGO -->
                 <a href="/" class="flex items-center gap-3 group">
 
-                    <div class="w-10 h-10 rounded-full overflow-hidden shadow-md group-hover:scale-105 transition">
+                    <div
+                        class="relative w-11 h-11 rounded-3xl overflow-hidden bg-white/50 backdrop-blur shadow-lg ring-1 ring-white/20 transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl">
+
                         <img src="{{ asset('images/logo.png') }}" alt="Supar Surf School"
                             class="w-full h-full object-cover">
                     </div>
 
-                    <div class="leading-tight">
-                        <span class="font-bold text-gray-900 text-base block">
+                    <div class="leading-none">
+
+                        <span class="block text-[17px] font-semibold tracking-tight text-slate-900">
                             Supar Surf School
                         </span>
+
+                        <span class="block mt-1 text-[10px] uppercase tracking-[0.25em] text-slate-500">
+                            Lombok • Indonesia
+                        </span>
+
                     </div>
 
                 </a>
 
                 <!-- MENU -->
-                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <nav class="hidden md:flex items-center space-x-8 text-m font-medium tracking-wide">
 
                     @php
                         function nav($path, $current)
