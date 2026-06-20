@@ -60,6 +60,49 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
+
+        .marquee {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .marquee-content {
+
+            display: inline-block;
+
+            min-width: 200%;
+
+            animation: marquee 25s linear infinite;
+
+            font-size: clamp(20px, 2vw, 32px);
+
+            font-weight: 800;
+
+            letter-spacing: .08em;
+
+            text-transform: uppercase;
+
+            text-align: center;
+
+            background: linear-gradient(90deg,
+                    #38bdf8,
+                    #ffffff,
+                    #38bdf8);
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @keyframes marquee {
+
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
     </style>
 
 </head>

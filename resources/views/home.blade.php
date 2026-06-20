@@ -19,7 +19,7 @@
 
     @if ($hero)
         @section('hero')
-            <div class="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] h-screen overflow-hidden">
+            <div class="relative w-screen mb-0 left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] h-screen overflow-hidden">
 
                 {{-- BACKGROUND --}}
                 @if ($hero->use_video && $hero->video)
@@ -31,8 +31,8 @@
                 @endif
 
                 {{-- OVERLAY (soft professional) --}}
-                <div class="absolute inset-0 bg-black/30"></div>
-                <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
+                <div class="absolute inset-0 bg-black/2"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/10 to-transparent"></div>
 
                 {{-- CONTENT --}}
                 <div class="relative z-10 h-full flex items-center">
@@ -53,7 +53,8 @@
                             </h1>
 
                             {{-- SUBTITLE --}}
-                            <p class="text-base md:text-2xl text-cyan-700 font-medium">
+                            <p
+                                class="text-base md:text-2xl font-medium bg-gradient-to-r from-cyan-300 via-sky-200 to-white bg-clip-text text-transparent">
                                 Beginners & Families Surf Experience
                             </p>
 
@@ -97,8 +98,9 @@
                 <div
                     class="hidden md:flex absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex-col items-center text-white/60">
 
-                    <span class="animate-bounce mt-4 text-[11px] tracking-[0.25em] uppercase text-center">
+                    <span class="animate-bounce mt-4 text-[11px] tracking-[0.25em] uppercase text-center text-gray-800">
                         Scroll to explore
+                        <span class="animate-bounce block text-gray-900 text-[10px]">↓↓</span>
                     </span>
 
                 </div>
@@ -108,6 +110,26 @@
     @endif
 
     {{-- hero end --}}
+
+    <!-- MOVING TEXT -->
+    <div class="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden bg-slate-950 -mt-10">
+
+        <div class="py-3">
+
+            <div class="marquee">
+                <div class="marquee-content">
+
+                    WELCOME TO SUPAR SURF SCHOOL • BEGINNER FRIENDLY • FAMILY SURF LESSONS • LOCAL CERTIFIED INSTRUCTORS •
+                    TANJUNG AAN BEACH • LOMBOK • INDONESIA •
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
 
     <!-- WHY -->
     <section class="max-w-6xl mx-auto px-4 py-16 md:py-20">
