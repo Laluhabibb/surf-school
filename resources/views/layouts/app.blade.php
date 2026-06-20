@@ -105,6 +105,20 @@
         }
     </style>
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Supar Surf School",
+      "url": "https://suparsurfschool.com",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "128"
+      }
+    }
+    </script>
+
 </head>
 
 <body class="bg-gray-50 text-gray-800">
