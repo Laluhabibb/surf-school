@@ -14,7 +14,7 @@
 # =========================
 # Build assets (Vite / Mix)
 # =========================
-/public/build
+# /public/build
 /public/hot
 
 # =========================
