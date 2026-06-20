@@ -15,7 +15,7 @@
                 <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-4">
                     Surf Packages
                 </h1>
-
+                {{-- hahaha --}}
                 <p class="max-w-2xl mx-auto text-gray-600 text-sm md:text-lg leading-relaxed">
                     Discover the perfect surfing experience at Tanjung Aan Beach.
                     Learn, explore, and enjoy unforgettable moments in Lombok.
