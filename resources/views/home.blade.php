@@ -23,11 +23,13 @@
 
                 {{-- BACKGROUND --}}
                 @if ($hero->use_video && $hero->video)
-                    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+                    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover"
+                        style="object-position: center center;">
                         <source src="{{ asset('storage/' . $hero->video) }}">
                     </video>
                 @else
-                    <img src="{{ asset('storage/' . $hero->image) }}" class="absolute inset-0 w-full h-full object-cover">
+                    <img src="{{ asset('storage/' . $hero->image) }}" alt="{{ $hero->title }}"
+                        class="absolute inset-0 w-full h-full object-cover" style="object-position: center center;">
                 @endif
 
                 {{-- OVERLAY (soft professional) --}}
@@ -100,7 +102,7 @@
 
                     <span class="animate-bounce mt-4 text-[11px] tracking-[0.25em] uppercase text-center text-gray-800">
                         Scroll to explore
-                        <span class="animate-bounce block text-gray-900 text-[10px]">↓↓</span>
+                        <span class="animate-bounce block text-gray-900 text-[10px] ">↓↓</span>
                     </span>
 
                 </div>
