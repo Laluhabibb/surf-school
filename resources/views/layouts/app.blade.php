@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="Supar Surf School Lombok offers beginner, family and private surf lessons at Tanjung Aan Beach, Central Lombok.">
+        content="Supar Surf School Lombok offers beginner, family and private surf lessons at Tanjung Aan Beach, Central Lombok, lombok tengah, Pantai indah lombok.">
 
     <meta name="keywords" content="surf school lombok, surf lesson lombok, tanjung aan surf school, surfing lombok">
 
@@ -19,9 +19,9 @@
     <meta name="robots" content="index, follow">
 
     <!-- FAVICON -->
-    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
-    <link rel="shortcut icon" href="{{ asset('images/logo.png') }}">
-    <link rel="apple-touch-icon" href="{{ asset('images/logo.png') }}">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/favicon.ico">
 
     <!-- OPEN GRAPH -->
     <meta property="og:type" content="website">

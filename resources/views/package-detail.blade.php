@@ -2,7 +2,7 @@
 
 @section('content')
     @php
-        $wa = '6281234567890'; // kalau mau, bisa ganti ke $globalContact->whatsapp juga
+        $wa = '6287821928126'; // kalau mau, bisa ganti ke $globalContact->whatsapp juga
         $message = urlencode('Hello, I would like to book ' . $package->name);
     @endphp
 

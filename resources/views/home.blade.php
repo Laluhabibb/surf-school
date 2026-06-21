@@ -33,8 +33,8 @@
                 @endif
 
                 {{-- OVERLAY (soft professional) --}}
-                <div class="absolute inset-0 bg-black/2"></div>
-                <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/10 to-transparent"></div>
+                <div class="absolute inset-0 bg-black/10"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-black/20 to-transparent"></div>
 
                 {{-- CONTENT --}}
                 <div class="relative z-10 h-full flex items-center">
@@ -56,7 +56,7 @@
 
                             {{-- SUBTITLE --}}
                             <p
-                                class="text-base md:text-2xl font-medium bg-gradient-to-r from-cyan-300 via-sky-200 to-white bg-clip-text text-transparent">
+                                class="text-base md:text-2xl font-medium bg-gradient-to-r from-cyan-200 via-sky-200 to-white bg-clip-text text-transparent">
                                 Beginners & Families Surf Experience
                             </p>
 
@@ -138,7 +138,10 @@
 
         <div class="text-center mb-10 md:mb-12" data-aos="fade-up">
             <h2 class="text-3xl md:text-4xl font-extrabold">Why Choose Us</h2>
-            <p class="text-gray-500 mt-2">Real ocean experience in Lombok</p>
+            <p class="text-gray-500 mt-4 px-20">Tanjung Aan Beach is one of the best surf spots in Lombok, known for its
+                soft
+                waves and beginner-friendly conditions. It is ideal for first-time surfers who want to learn in a safe and
+                natural environment.</p>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">

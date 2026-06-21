@@ -2,7 +2,7 @@
 
 @section('content')
     @php
-        $wa = '6281234567890'; // idealnya ambil dari $globalContact
+        $wa = '6287821928126'; // idealnya ambil dari $globalContact
     @endphp
 
     <section class="relative md:pb-20 pt-5 bg-gradient-to-b from-sky-50 via-white to-blue-50">
