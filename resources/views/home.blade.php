@@ -7,14 +7,16 @@
         if (!empty($contact?->whatsapp)) {
             $wa = preg_replace('/\D/', '', $contact->whatsapp);
         }
+
     @endphp
 
-    <!-- HERO -->
-    @php
+    // <!-- HERO -->
+    // @php
         $hero = \App\Models\HeroSetting::where('is_active', true)->first();
         $contact = \App\Models\ContactSetting::first();
 
         $wa = preg_replace('/[^0-9]/', '', $contact?->whatsapp ?? '');
+
     @endphp
 
     @if ($hero)

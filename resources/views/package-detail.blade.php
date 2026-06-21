@@ -2,7 +2,10 @@
 
 @section('content')
     @php
-        $wa = '6287821928126'; // kalau mau, bisa ganti ke $globalContact->whatsapp juga
+        use App\Models\ContactSetting;
+        $contact = ContactSetting::first();
+
+        $wa = preg_replace('/\D/', '', $contact?->whatsapp ?? '');
         $message = urlencode('Hello, I would like to book ' . $package->name);
     @endphp
 

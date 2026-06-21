@@ -2,7 +2,11 @@
 
 @section('content')
     @php
-        $wa = '6287821928126'; // idealnya ambil dari $globalContact
+        use App\Models\ContactSetting;
+
+        $contact = ContactSetting::first();
+
+        $wa = preg_replace('/\D/', '', $contact?->whatsapp ?? '');
     @endphp
 
     <section class="relative md:pb-20 pt-5 bg-gradient-to-b from-sky-50 via-white to-blue-50">
